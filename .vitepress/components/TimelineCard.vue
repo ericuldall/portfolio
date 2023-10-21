@@ -6,7 +6,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="rounded-xl bg-[var(--vp-c-default-soft)] mb-8">
+  <div class="rounded-xl bg-[var(--vp-c-default-soft)] mb-8 grow">
     <div class="p-2 rounded-t-xl" :style="{ backgroundColor: item.color }">
       <small class="font-bold text-white">{{item.date}}</small>
     </div>

@@ -3,7 +3,6 @@ layout: home
 ---
 <script setup>
 import { ref } from "vue";
-import Timeline from 'primevue/timeline';
 import TimelineCard from './.vitepress/components/TimelineCard.vue';
 
 import { AcademicCapIcon, ArrowsRightLeftIcon, BuildingOffice2Icon, CakeIcon, CodeBracketSquareIcon, InformationCircleIcon, RocketLaunchIcon } from '@heroicons/vue/24/solid';
@@ -144,31 +143,32 @@ const events = ref([
   }
 </script>
 
-<div class="flex justify-center items-center pt-32">
-  <Timeline :value="events" align="alternate" class="md:max-w-[75%]">
-    <template #marker="{ item }">
-      <span class="hover:scale-110 flex p-2 rounded-full items-center justify-center text-white border-circle z-1 shadow-1" :style="{ backgroundColor: item.color }">
-        <AcademicCapIcon v-if="item.icon == 'learn'" class="w-6 h-6 text-white" />
-        <BuildingOffice2Icon v-if="item.icon == 'work'" class="w-6 h-6 text-white" />
-        <CakeIcon v-if="item.icon == 'cake'" class="w-6 h-6 text-white" />
-        <CodeBracketSquareIcon v-if="item.icon == 'code'" class="w-6 h-6 text-white" />
-        <InformationCircleIcon v-if="item.icon == 'info'" class="w-6 h-6 text-white" />
-        <RocketLaunchIcon v-if="item.icon == 'rocket'" class="w-6 h-6 text-white" />
-      </span>
-    </template>
-    <template #connector>
-      <div class="border border-[var(--vp-c-default-soft)] h-full"></div>
-    </template>
-    <template #opposite="{ item }">
-      <TimelineCard :item="item.split[0]" v-if="item.split" />
-    </template>
-    <template #content="{ item }">
-      <TimelineCard :item="item.split[1]" v-if="item.split" />
-      <TimelineCard :item="item" v-else />
-      <div class="bg-[#EC4899] cursor-pointer hover:scale-110 font-bold p-2 -mt-6 text-white rounded-xl" v-if="item.title=='Launched Chroma'" @click.prevent="loadChromaDemo">
-        Click here to try chroma on this page ;)<br />
-        <small>Some features won't work</small>
+<div class="flex flex-col items-center">
+  <div class="w-full md:w-3/4 p-4">
+    <div class="flex even:flex-row-reverse w-full" v-for="item in events" :key="item">
+      <div class="flex-1">
+        <TimelineCard :item="item.split[0]" v-if="item.split" class="hidden md:block" />
       </div>
-    </template>
-  </Timeline>
+      <div class="flex flex-col items-center flex-none mx-6">
+        <span class="hover:scale-110 flex p-2 rounded-full items-center justify-center text-white border-circle z-1 shadow-1" :style="{ backgroundColor: item.color }">
+          <AcademicCapIcon v-if="item.icon == 'learn'" class="w-6 h-6 text-white" />
+          <BuildingOffice2Icon v-if="item.icon == 'work'" class="w-6 h-6 text-white" />
+          <CakeIcon v-if="item.icon == 'cake'" class="w-6 h-6 text-white" />
+          <CodeBracketSquareIcon v-if="item.icon == 'code'" class="w-6 h-6 text-white" />
+          <InformationCircleIcon v-if="item.icon == 'info'" class="w-6 h-6 text-white" />
+          <RocketLaunchIcon v-if="item.icon == 'rocket'" class="w-6 h-6 text-white" />
+        </span>
+        <div class="border border-[var(--vp-c-default-soft)] h-full"></div>
+      </div>
+      <div class="flex-1">
+        <TimelineCard :item="item.split[0]" v-if="item.split" class="block md:hidden" />
+        <TimelineCard :item="item.split[1]" v-if="item.split" />
+        <TimelineCard :item="item" v-else />
+        <div class="bg-[#EC4899] cursor-pointer hover:scale-110 font-bold p-2 -mt-6 text-white rounded-xl" v-if="item.title=='Launched Chroma'" @click.prevent="loadChromaDemo">
+          Click here to try chroma on this page ;)<br />
+          <small>Some features won't work</small>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
