@@ -3,8 +3,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Eric Uldall",
-  description: "Creative Engineering",
+  title: "Creative Engineering",
+  description: "An online portfolio for an easy insight in to my developemnt experience over the years.",
   head: [
     [
       'script',
