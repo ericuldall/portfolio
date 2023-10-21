@@ -28,7 +28,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/ericuldall' }
+      { icon: 'github', link: 'https://github.com/ericuldall/portfolio' }
     ],
     footer: {
       message: 'Built by me, using VitePress and Tailwind',
