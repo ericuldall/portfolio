@@ -1,5 +1,6 @@
 ---
 layout: home
+title: 'History'
 ---
 <script setup>
 import { ref } from "vue";

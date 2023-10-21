@@ -1,7 +1,7 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
-
+title: 'Creative Engineering'
 hero:
   name: "Crafting Code"
   text: "Building Solutions"

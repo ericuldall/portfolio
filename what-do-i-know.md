@@ -1,5 +1,6 @@
 ---
 layout: home
+title: 'What do I know?'
 ---
 <script setup>
 import { ref } from 'vue';
