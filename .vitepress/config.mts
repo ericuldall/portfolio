@@ -30,6 +30,10 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ericuldall' }
     ],
+    footer: {
+      message: 'Built by me, using VitePress and Tailwind',
+      copyright: 'Copyright © Eric Uldall'
+    }
   },
   vite: {
     resolve: {

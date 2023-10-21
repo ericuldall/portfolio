@@ -25,8 +25,13 @@ const items = ref([
         duration: '10+ Years'
       },
       {
-        title: 'Frameworks',
-        subtitle: 'Vue, React, Backbone/Marionette',
+        title: 'JS Frameworks',
+        subtitle: 'Vue, React, Backbone/Marionette, jQuery',
+        duration: '10+ Years'
+      },
+      {
+        title: 'CSS Frameworks',
+        subtitle: 'Bootstrap, Material Design, Tailwind',
         duration: '10+ Years'
       },
       {
@@ -42,6 +47,7 @@ const items = ref([
     list: [
       {
         title: 'PHP',
+        subtitle: 'Kohana, Code Igniter, Cake, Wordpress, Joomla, etc...',
         duration: '20+ Years'
       },
       {
