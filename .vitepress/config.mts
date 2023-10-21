@@ -20,6 +20,7 @@ export default defineConfig({
       { text: 'What do I know?', link: '/what-do-i-know' },
       { text: 'History', link: '/history' },
       { text: 'Open-Source Contributions', link: '/open-source-contributions' },
+      { text: 'Contact Me', link: 'mailto:ericuldall@gmail.com' }
       //{ text: 'For Fun', link: '/for-fun' }
     ],
 
