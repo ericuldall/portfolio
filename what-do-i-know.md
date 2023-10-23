@@ -165,7 +165,28 @@ const items = ref([
         duration: '10+ Years'
       }
     ]
-  }
+  },
+  {
+    title: 'Leadership & Project Managment',
+    description: `I've always taken a strong leadership role wherever I've worked. I'd often be the first through the door and the last to leave. I've had the opportunity to formally manage teams in full time settings as well as contract environments. No matter the case I always make the success of every team member my primary focus. I've also had experience reviewing resumes and hiring new team members for projects as well as, unfortunately, terminating team members when necessary.`,
+    list: [
+      {
+        title: 'Methodologies',
+        subtitle: 'Kanban, Agile, Scrum & Waterfall',
+        duration: '15+ Years'
+      },
+      {
+        title: 'Project Management Tools',
+        subtitle: 'Jira, Trello, Basecamp, Clickup, etc...',
+        duration: '15+ Years'
+      },
+      {
+        title: 'Planning',
+        subtitle: 'Negotiating features, setting goals, writing deliverables, etc...',
+        duration: '10+ Years'
+      }
+    ]
+  } 
 ]);
 const activeTab = ref(items.value[0]);
 const setActiveTab = (tab) => {
