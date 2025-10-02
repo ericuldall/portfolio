@@ -42,40 +42,12 @@ const events = ref([
       color: '#7B3B3B'
     },
     {
-      date: '2005-2010',
+      date: '2005-2014',
       title: 'Odd Jobs and such',
       subtitle: 'It was a long time ago...',
       description: `During this time I did some freelance work and an internship but it's so long ago I don't really remember all the details. Was a good time to cut my teeth and get some work under my belt as a young lad.`,
       icon: 'rocket',
       color: '#668284',
-    },
-    {
-      date: 'Circa 2010',
-      title: 'Hired at Mautofied',
-      subtitle: 'Software Engineer',
-      description: `I got to work on their flagship site (that was later acquired) as well as some side contracts managed by the company.`,
-      icon: 'work',
-      link: 'https://mautofied.com',
-      linkText: 'Check out mautofied.com',
-      color: '#2A2829'
-    },
-    {
-      date: 'October 2011',
-      title: 'Hired at Weedmaps',
-      subtitle: 'Jr. Software Engineer',
-      description: `Got to work along side a lot of talented developers, designers and business peole at this booming startup. This job was a huge leap as I was exposed to many concepts and technologies that were missing from my skillset.`,
-      icon: 'work',
-      color: '#493736',
-      link: 'https://weedmaps.com',
-      linkText: 'Check out weedmaps.com'
-    },
-    {
-      date: '2012-2014',
-      title: 'Hired at Socialbliss',
-      subtitle: 'A fashion startup pinterest clone',
-      description: `I spent a couple years growing at this company and was responsible for a majority of the dev tasks on their flagship site. I also spearheaded the effort to convert their site into a fully functional sales marketplace with a lifestyle monthly subscription box service.`,
-      icon: 'work',
-      color: '#7B3B3B'
     },
     {
       split: [
