@@ -78,31 +78,67 @@ const items = ref([
   },
   {
     title: 'Mobile',
-    description: `I am newer to building native mobile apps, but I've gotten a solid amount of practice in the last couple years. Native mobile apps are now something I'm competant enough to build projects on my own, or manage a team to successful goals. Most of my experience is with javascript based tools: React Native or Nativescript, but I've also written some code in swift when learning iOS development and have had some Java experience in the past as well.`,
+    description: `Mobile came to me later than the web did, but I've shipped enough of it now to build a project solo or lead a team through one. Most of my experience is with the javascript-based tools — React Native and Nativescript — though I've written Swift while learning iOS properly and have Java experience further back. The unglamorous half of mobile is the release pipeline, and I've done that end of it too: signing, store review, staged rollouts and the crash reports that follow.`,
     list: [
       {
         title: 'React Native',
-        duration: '1+ Years'
+        duration: '3+ Years'
       },
       {
         title: 'Nativescript & Nativescript Vue',
-        duration: '1+ Years'
+        duration: '3+ Years'
       },
       {
         title: 'Firebase',
         subtitle: 'Analytics, Performance, Crashlytics, Messaging',
-        duration: '1+ Years'
+        duration: '3+ Years'
       },
       {
         title: 'App Stores',
         subtitle: 'Apple AppStore, Google Play',
+        duration: '3+ Years'
+      },
+      {
+        title: 'Mobile Web & Canvas Games',
+        subtitle: 'Touch input, orientation, fullscreen, offline-capable builds',
+        duration: '3+ Years'
+      }
+    ]
+  },
+  {
+    title: 'AI & Automation',
+    description: `The newest tool on the belt, and the one changing fastest. I build with language models rather than around them — engagement agents that hold a real conversation and hand off cleanly to a human, MCP servers that let an agent drive a toolchain directly, and workflow automation that removes the humans from the parts humans shouldn't be doing. I'm more interested in the plumbing than the demo: what happens when the model is wrong, who takes over, and how you keep it in sync with the systems of record a business already trusts.`,
+    list: [
+      {
+        title: 'LLM Agents in Production',
+        subtitle: 'Stage-specific agents, human hand-off, conversation logging',
+        duration: '2+ Years'
+      },
+      {
+        title: 'Model Context Protocol (MCP)',
+        subtitle: 'Built an MCP server to drive multi-repo git workspaces from an agent',
         duration: '1+ Years'
+      },
+      {
+        title: 'Workflow Automation',
+        subtitle: 'n8n (self-hosted on Cloud Run), GoHighLevel, webhook pipelines',
+        duration: '3+ Years'
+      },
+      {
+        title: 'CRM & Platform Integration',
+        subtitle: 'FranConnect, Salesforce, HubSpot, GoHighLevel — two-way sync',
+        duration: '5+ Years'
+      },
+      {
+        title: 'AI-Assisted Development',
+        subtitle: 'Agentic coding tools as part of a normal build workflow',
+        duration: '2+ Years'
       }
     ]
   },
   {
     title: 'Databases',
-    description: `Databases are essential technology for many of the projects I've worked on over the years. I've learned many depending on the unique requirments for the task we sought to achieve. While most commonly I find myself using either MongoDB or MySQL, below you can find a list of the databases I've worked with`,
+    description: `Databases are essential technology for many of the projects I've worked on over the years. I've learned many depending on the unique requirements for the task we sought to achieve. While most commonly I find myself using either MongoDB or MySQL, below you can find a list of the databases I've worked with`,
     list: [
       {
         title: 'MySQL',
@@ -132,7 +168,7 @@ const items = ref([
   },
   {
     title: 'Build, Test & Deploy',
-    description: `I spent some years developing DevOps skills and managing all aspects of standing up infrastructure, automiting code builds, testing and continuous deployment. There's a lot here that I can't easily put into a list but I'll share some of the technologies that I've come to find useful when mainting infrastructure and applications`,
+    description: `I spent some years developing DevOps skills and managing all aspects of standing up infrastructure, automating code builds, testing and continuous deployment. There's a lot here that I can't easily put into a list but I'll share some of the technologies that I've come to find useful when maintaining infrastructure and applications`,
     list: [
       {
         title: 'Source Control Tools',
@@ -167,7 +203,7 @@ const items = ref([
     ]
   },
   {
-    title: 'Leadership & Project Managment',
+    title: 'Leadership & Project Management',
     description: `I've always taken a strong leadership role wherever I've worked. I'd often be the first through the door and the last to leave. I've had the opportunity to formally manage teams in full time settings as well as contract environments. No matter the case I always make the success of every team member my primary focus. I've also had experience reviewing resumes and hiring new team members for projects as well as, unfortunately, terminating team members when necessary.`,
     list: [
       {
@@ -215,7 +251,7 @@ const setActiveTab = (tab) => {
             <Tab v-slot="{ selected }" as="template" v-for="item in items" :key="item">
               <button
                 :class="[
-                  'grow rounded-lg py-2.5 text-sm leading-6 px-8',
+                  'grow rounded-lg py-2.5 text-sm leading-6 px-4 lg:px-6',
                   'ring-white ring-opacity-60 focus:outline-none',
                   selected ? 'font-bold bg-white shadow text-[var(--vp-c-brand-1)]' : 'text-[var(--vp-c-text-1)] hover:bg-neutral-200/[0.8] hover:text-neutral-600'
                 ]"

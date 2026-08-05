@@ -6,7 +6,7 @@ title: 'History'
 import { ref } from "vue";
 import TimelineCard from './.vitepress/components/TimelineCard.vue';
 
-import { AcademicCapIcon, ArrowsRightLeftIcon, BuildingOffice2Icon, CakeIcon, CodeBracketSquareIcon, InformationCircleIcon, RocketLaunchIcon } from '@heroicons/vue/24/solid';
+import { AcademicCapIcon, BuildingOffice2Icon, CakeIcon, CodeBracketSquareIcon, InformationCircleIcon, PuzzlePieceIcon, RocketLaunchIcon } from '@heroicons/vue/24/solid';
 
 const events = ref([
     {
@@ -29,7 +29,7 @@ const events = ref([
       date: 'Circa 2004',
       title: 'Enter Server Side',
       subtitle: 'Got bored just building "websites"',
-      description: `I was introduced to PHP by a friend in high school and I began to learn everything I needed to know about building a fully functionaly application.`,
+      description: `I was introduced to PHP by a friend in high school and I began to learn everything I needed to know about building a fully functional application.`,
       icon: 'code',
       color: '#493736'
     },
@@ -55,10 +55,10 @@ const events = ref([
           date: '2016',
           title: 'Co-Created Amino Editor',
           subtitle: 'The best-in-class live css editor chrome extension',
-          description: `Amino was originally my initial exploration into the world of chrome extensions. I partnered up with a designer and we grew that into something truly wonderful. Today Amino boastes over 30k active installed users on the chrome web store alone.`,
+          description: `Amino was originally my initial exploration into the world of chrome extensions. I partnered up with a designer and we grew that into something truly wonderful. Today Amino boasts over 30k active installed users on the chrome web store alone.`,
           color: '#7F79D3',
           link: 'https://aminoeditor.com',
-          linkTest: 'Try Amino'
+          linkText: 'Try Amino'
         },
         {
           date: '2014 - 2019',
@@ -84,7 +84,7 @@ const events = ref([
     {
       date: 'May 10th, 2022',
       title: 'Launched Chroma',
-      subtitle: 'Revolutionizng color picking and pallette creating in chrome based browsers',
+      subtitle: 'Revolutionizing color picking and palette creation in chrome based browsers',
       description: `Chroma was the next release from me and my partner that created amino. We'd gotten a taste of the chrome extension space and we enjoyed it. Chroma has built up over 10k installed users in chrome alone and holds a sturdy 4.8 star rating.`,
       icon: 'rocket',
       color: '#EC4899',
@@ -92,11 +92,53 @@ const events = ref([
       linkText: 'Check out chroma.dev',
     },
     {
-      date: '2023 and Beyond',
-      icon: 'info',
+      date: '2023 - 2024',
+      icon: 'work',
       color: '#493736',
-      title: 'A busy year and more',
-      description: `Managing a few large projects with Frozen Crow kept me pretty busy this year but there's still a lot of room to continue growing. We're constantly looking for new opportunities and improving our services. A heavy focus on our email marketing platform Carrier Crow has expanded the world of email for our users.<br /><br /><b>Stay tuned for what's next</b>`
+      title: 'Scaling Frozen Crow',
+      subtitle: 'Bigger projects, and a heavy investment in Carrier Crow',
+      description: `A stretch of large client projects kept me busy, and we poured serious effort into Carrier Crow &mdash; our email marketing platform &mdash; expanding what our users could do with email. On the agency side we grew into managing over a million dollars in ad spend at a 7-10x return.`
+    },
+    {
+      date: '2025 - Present',
+      icon: 'rocket',
+      color: '#0E7490',
+      title: 'Consulting on FranFunnel',
+      subtitle: 'Text-first lead engagement for franchise development',
+      description: `I picked up a consulting engagement on FranFunnel, a platform built on a simple premise: the first response wins the deal. It texts a franchise prospect within 60 seconds of their inquiry, hands the conversation to an AI agent tuned for that stage of the pipeline, and syncs the whole thing back to whatever CRM the brand already runs. I've worked across the engagement engine and its integration surface.`,
+      link: 'https://franfunnel.com',
+      linkText: 'Check out franfunnel.com'
+    },
+    {
+      split: [
+        {
+          date: 'August 2026',
+          title: 'Shipped Catch Fishies',
+          subtitle: 'A spearfishing arcade game',
+          description: `Two modes in one ocean. <b>One Breath</b> is a single-button dive where rhythm is the only thing you control; <b>Open Water</b> gives you two axes, a speargun, boat traffic overhead and an air supply that runs out. Built on a hand-written canvas engine with no framework, no build step and no dependencies &mdash; the whole game is a double-clickable HTML file.`,
+          color: '#0891B2',
+          link: 'https://catchfishies.com',
+          linkText: 'Play Catch Fishies'
+        },
+        {
+          date: 'August 2026',
+          title: 'Shipped snackOS: DevOps Manager',
+          subtitle: 'A puzzle game about the consequences of clicking "approve"',
+          description: `You are the only DevOps engineer at snackstack inc. Coworkers want access <i>now</i>, a botnet is knocking, and on day five an attacker walks the graph of exactly what you granted. Seven days of ticket triage, firewall rule chains, log forensics and one live incident &mdash; all presented as a fake operating system, in zero-dependency TypeScript, entirely client-side.`,
+          color: '#7C3AED',
+          link: 'https://snackos.dev',
+          linkText: 'Play snackOS'
+        }
+      ],
+      icon: 'game',
+      color: '#7C3AED',
+    },
+    {
+      date: "What's Next",
+      icon: 'info',
+      color: '#2A2829',
+      title: 'Still building',
+      description: `Frozen Crow keeps growing, the consulting work is ongoing, and shipping two games in a month reminded me why I started doing this in the first place. I'm always open to interesting problems &mdash; if you've got one, <a class="font-bold text-[var(--vp-c-brand-1)]" href="mailto:ericuldall@gmail.com">get in touch</a>.<br /><br /><b>Stay tuned.</b>`
     }
 ]);
 
@@ -129,6 +171,7 @@ const events = ref([
           <CakeIcon v-if="item.icon == 'cake'" class="w-6 h-6 text-white" />
           <CodeBracketSquareIcon v-if="item.icon == 'code'" class="w-6 h-6 text-white" />
           <InformationCircleIcon v-if="item.icon == 'info'" class="w-6 h-6 text-white" />
+          <PuzzlePieceIcon v-if="item.icon == 'game'" class="w-6 h-6 text-white" />
           <RocketLaunchIcon v-if="item.icon == 'rocket'" class="w-6 h-6 text-white" />
         </span>
         <div class="border border-[var(--vp-c-default-soft)] h-full"></div>

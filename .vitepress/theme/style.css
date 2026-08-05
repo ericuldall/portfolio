@@ -52,10 +52,16 @@
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
-  --vp-c-brand-1: #ff4c70;
-  --vp-c-brand-2: #ff7994;
-  --vp-c-brand-3: #ff1f4c;
-  --vp-c-brand-soft: #ffd2db;
+  /* Brand stays the same rose identity, tuned for contrast: -1 is used for
+     text on light surfaces, so it needs to be darker than the accent itself. */
+  --vp-c-brand-1: #e11d48;
+  --vp-c-brand-2: #f43f5e;
+  --vp-c-brand-3: #be123c;
+  /* Must be semi-transparent so it composes over either theme's background. */
+  --vp-c-brand-soft: rgba(244, 63, 94, 0.14);
+
+  /* Secondary accent, used only in gradients alongside the brand. */
+  --eu-c-accent: #f97316;
 
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-2: var(--vp-c-brand-2);
@@ -71,6 +77,16 @@
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
+}
+
+/* Rose reads muddy against a dark background, so lift the text-weight steps. */
+.dark {
+  --vp-c-brand-1: #fb7185;
+  --vp-c-brand-2: #f43f5e;
+  --vp-c-brand-3: #e11d48;
+  --vp-c-brand-soft: rgba(244, 63, 94, 0.18);
+
+  --eu-c-accent: #fb923c;
 }
 
 /**
@@ -97,16 +113,16 @@
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(
     120deg,
-    var(--vp-c-brand-3) 30%,
-    var(--vp-c-text-1)
+    var(--vp-c-brand-2) 20%,
+    var(--eu-c-accent)
   );
 
   --vp-home-hero-image-background-image: linear-gradient(
     -45deg,
-    var(--vp-c-brand-3) 50%,
-    var(--vp-c-text-1) 50%
+    var(--vp-c-brand-2) 50%,
+    var(--eu-c-accent) 50%
   );
-  --vp-home-hero-image-filter: blur(40px);
+  --vp-home-hero-image-filter: blur(44px);
 }
 
 @media (min-width: 640px) {
@@ -140,6 +156,141 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
-.VPImage.logo {
+/**
+ * Shared surface + accent classes
+ *
+ * The pages here are hand-laid-out with Tailwind rather than rendered markdown,
+ * so these carry the bits of the look that need to stay identical across pages:
+ * card surfaces, eyebrows, chips and section rules. Kept as real classes (not
+ * repeated utility strings) so a change to the card treatment happens once.
+ * -------------------------------------------------------------------------- */
 
+:root {
+  --eu-surface: rgba(255, 255, 255, 0.72);
+  --eu-surface-hover: #ffffff;
+  --eu-border: rgba(60, 60, 67, 0.12);
+  --eu-border-hover: rgba(225, 29, 72, 0.35);
+  --eu-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --eu-shadow-hover: 0 12px 32px -8px rgba(0, 0, 0, 0.16);
 }
+
+.dark {
+  --eu-surface: rgba(255, 255, 255, 0.04);
+  --eu-surface-hover: rgba(255, 255, 255, 0.07);
+  --eu-border: rgba(255, 255, 255, 0.1);
+  --eu-border-hover: rgba(251, 113, 133, 0.4);
+  --eu-shadow: none;
+  --eu-shadow-hover: 0 12px 32px -8px rgba(0, 0, 0, 0.5);
+}
+
+.eu-card {
+  background: var(--eu-surface);
+  border: 1px solid var(--eu-border);
+  border-radius: 16px;
+  box-shadow: var(--eu-shadow);
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s,
+    transform 0.25s;
+}
+
+/* Only cards that link anywhere get the affordance. */
+a.eu-card:hover {
+  background: var(--eu-surface-hover);
+  border-color: var(--eu-border-hover);
+  box-shadow: var(--eu-shadow-hover);
+  transform: translateY(-3px);
+}
+
+.eu-card-footer {
+  border-top: 1px solid var(--eu-border);
+}
+
+.eu-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--vp-c-brand-1);
+}
+
+.eu-chip {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--vp-c-default-soft);
+  color: var(--vp-c-text-2);
+  white-space: nowrap;
+}
+
+.eu-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-2);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--eu-border);
+}
+
+.eu-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+}
+
+.eu-gradient-text {
+  background: linear-gradient(
+    120deg,
+    var(--vp-c-brand-2) 20%,
+    var(--eu-c-accent)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.eu-button {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  background: var(--vp-c-brand-3);
+  color: #fff !important;
+  text-decoration: none;
+  transition: background-color 0.25s, transform 0.25s;
+}
+
+.eu-button:hover {
+  background: var(--vp-c-brand-2);
+  transform: translateY(-2px);
+}
+
+/* Inline code inside hand-authored cards — markdown styles don't reach here. */
+.eu-card code {
+  font-size: 0.9em;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: var(--vp-c-default-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eu-card,
+  a.eu-card:hover,
+  .eu-button,
+  .eu-button:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
